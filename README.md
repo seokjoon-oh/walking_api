@@ -117,27 +117,18 @@ JSON Response
 
 테이블 구조와 재현용 샘플 데이터는 [`database/walking.sql`](database/walking.sql)에서 확인할 수 있습니다.
 
-## 구현 화면
+## 테스트 및 구현 확인
 
-### 산책로 목록 조회
+프로젝트 보고서와 설명 영상에서 다음 동작을 확인했습니다.
 
-![산책로 목록 조회](docs/images/walk-list.png)
-
-### 태그 검색
-
-![태그 검색](docs/images/tag-filter.png)
-
-### 즐겨찾기 POST 테스트
-
-![즐겨찾기 추가](docs/images/favorite-post.png)
-
-### 후기 POST 테스트
-
-![후기 등록](docs/images/review-post.png)
-
-### Railway 배포 환경에서 즐겨찾기 조회
-
-![Railway 배포 결과](docs/images/railway-favorites.png)
+| 확인 항목 | 사용 환경 |
+| --- | --- |
+| 산책로 목록 및 조건 검색 | Browser / Localhost |
+| 태그 기반 검색 | Browser / Localhost |
+| 즐겨찾기 추가 및 조회 | Postman |
+| 후기 등록 및 조회 | Postman |
+| 평균 평점순 조회 | Browser / Postman |
+| 배포 환경 API 응답 | Railway + Aiven MySQL |
 
 ## 프로젝트 구조
 
@@ -146,13 +137,7 @@ walking_api/
 ├── database/
 │   └── walking.sql
 ├── docs/
-│   ├── project-report.md
-│   └── images/
-│       ├── favorite-post.png
-│       ├── railway-favorites.png
-│       ├── review-post.png
-│       ├── tag-filter.png
-│       └── walk-list.png
+│   └── project-report.md
 ├── src/
 │   ├── main/java/com/example/walkingservice/
 │   │   ├── controller/
