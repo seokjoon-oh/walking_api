@@ -153,6 +153,16 @@ GET 요청은 브라우저에서도 확인했고, POST/DELETE 요청은 Postman�
 
 프로젝트 당시 Aiven MySQL을 외부 DB로 사용하고 Railway에 Spring Boot 서버를 배포했습니다. 설명 영상에서는 로컬 API 호출과 Railway 배포 URL에서 JSON 응답이 반환되는 과정을 확인했습니다.
 
+확인한 테스트 흐름은 다음과 같습니다.
+
+- 산책로 목록 조회
+- 거리·난이도·편의시설 조건 검색
+- 태그 검색
+- 즐겨찾기 추가 및 사용자별 조회
+- 후기 등록 및 산책로별 조회
+- 평균 평점순 조회
+- Railway 배포 환경에서 API 응답 확인
+
 ## 9. 문제 해결
 
 ### DB 접속 정보가 GitHub Push Protection에 감지됨
@@ -176,25 +186,3 @@ Railway에는 Variables가 설정되어 있었지만 로컬 IntelliJ에서는 �
 ### HTTP Method 혼동
 
 `/api/reviews`는 POST 전용인데 브라우저 주소창에서 GET으로 요청하면서 `405 Method Not Allowed`가 발생했습니다. 후기 조회는 `/api/reviews/walk/{walkId}` 또는 `/api/reviews/top-rated`를 사용하도록 구분했습니다.
-
-## 10. 구현 확인 화면
-
-### 산책로 목록
-
-![산책로 목록](images/walk-list.png)
-
-### 태그 필터
-
-![태그 필터](images/tag-filter.png)
-
-### 즐겨찾기 등록
-
-![즐겨찾기 등록](images/favorite-post.png)
-
-### 후기 등록
-
-![후기 등록](images/review-post.png)
-
-### Railway 배포 결과
-
-![Railway 배포 결과](images/railway-favorites.png)
